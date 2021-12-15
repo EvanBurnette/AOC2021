@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Advent of Code hardcoded width
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  remove hardcoded width on advent of code
 // @author       You
 // @match        https://adventofcode.com/2021/day/*
@@ -11,8 +11,8 @@
 
 (function() {
   'use strict';
-  const articles = document.getElementsByClassName("day-desc");
-  Array.from(articles).forEach(article => {
-      article.style.width = "35rem";
-  });
+  const style = document.createElement("style");
+  const payload = document.createTextNode("article{max-width: 97vw;}");
+  style.appendChild(payload);
+  document.body.appendChild(style);
 })();
