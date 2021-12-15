@@ -7,7 +7,7 @@ function createCoord(xy_string) {
   return {x: xyArr[0], y: xyArr[1]}
 }
 
-const vectors = data.map((datum, i) => {
+const vectors = data.map(datum => {
   const coords = datum.split(' -> ')
   // console.log(coords)
   let begin = createCoord(coords[0])
@@ -81,7 +81,6 @@ function printMap(map) {
 
 // printMap(map)
 console.log(getCount(map))
-
 
 //lesson learned: off by one errors when making map created a problem later when mutating map members
 //each map dimension was 9x9 with test data when it should have been 10x10
