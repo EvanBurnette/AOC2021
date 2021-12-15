@@ -85,4 +85,9 @@ console.log(getCount(map))
 
 //lesson learned: off by one errors when making map created a problem later when mutating map members
 //each map dimension was 9x9 with test data when it should have been 10x10
-//test data failed with the vertical lines but not horizontal
+//error message was:
+// map[y][x]++
+// ^
+// TypeError: Cannot read properties of undefined (reading '787')
+//error message manifested downstream from actual error which cost me some time
+//test data failed with the vertical lines but not horizontal because horizontal test data didn't go up to the edge
