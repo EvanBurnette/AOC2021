@@ -28,4 +28,4 @@ for (let i = median - 1000; i < median + 1000; i++){ //TODO implemenent a binary
   guesses.push(getFuelCost(crabArr, i))
 }
 console.log(median)
-console.log(Math.min(...guesses))
+console.log(Math.min(...guesses)) 
