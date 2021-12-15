@@ -12,9 +12,9 @@ initialJellies.forEach(jelly => {
 
 const days = 256;
 for (let i = 0; i < days; i++) {
-  let zeroes = jellies.shift();
-  jellies[6] += zeroes;
-  jellies.push(zeroes);
+  let zeroes = jellies.shift(); //take jellies off the front of the array
+  jellies[6] += zeroes;         //move them to day 6 jelly bucket
+  jellies.push(zeroes);         //push their offspring to day 8 jelly bucket
 }
 
 let total = jellies.reduce((accum, current) => {
