@@ -24,8 +24,11 @@ function getFuelCost (arr, pointB) {
 // console.log(mean);
 let guesses = [];
 
-for (let i = median - 1000; i < median + 1000; i++){ //TODO implemenent a binary search here instead of this dumb way
+for (let i = 0; i < median + 1000; i++){ //TODO implemenent a binary search here instead of this dumb way
   guesses.push(getFuelCost(crabArr, i))
 }
 console.log(median)
 console.log(Math.min(...guesses)) 
+console.log(guesses.indexOf(Math.min(...guesses)))
+console.log(getFuelCost(crabArr, 488))
+console.log(mean) // Answer to part a was median, part b was mean...
