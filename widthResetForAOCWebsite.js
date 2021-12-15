@@ -12,7 +12,7 @@
 (function() {
   'use strict';
   const style = document.createElement("style");
-  const payload = document.createTextNode("article{max-width: 97vw;}");
+  const payload = document.createTextNode("article{max-width: 95vw;}");
   style.appendChild(payload);
   document.body.appendChild(style);
 })();
