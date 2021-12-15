@@ -91,3 +91,4 @@ function findLastWinningScore() {
 console.log(findLastWinningScore())
 
 //lesson learned: no returning from forEach
+//use for (let [i, val] of arr.entries()){}
