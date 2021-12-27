@@ -1,5 +1,7 @@
+#!deno run --allow-read
+
 function getPopBit(arr: number[][], i: number): 1 | 0 {
-  let count = arr.reduce((accum, current) => {
+  const count = arr.reduce((accum, current) => {
     return accum + current[i] //add up bits in this position for each subarray in the array
   }, 0)
   if (count >= (arr.length / 2)) return 1 //if the count is higher or equal to half 1 is most popular bit
@@ -7,7 +9,7 @@ function getPopBit(arr: number[][], i: number): 1 | 0 {
 }
 
 function getUnPopBit(arr: number[][], i: number): 1 | 0 {
-  let count = arr.reduce((accum, current) => {
+  const count = arr.reduce((accum, current) => {
     return accum + current[i]
   }, 0)
   if (count >= (arr.length/2)) return 0 //exactly the opposite of popular bit except biased for 0 in case of tie
@@ -24,7 +26,7 @@ function getOxygenRating(arr: number[][]): number[] {
 }
 
 function getCO2Rating(arr: number[][]): number[]{
-  let width = arr[0].length
+  const width = arr[0].length
   let lastArr = [...arr]
   for (let i = 0; i < width; i++){          //for each bit
     const unPopBit = getUnPopBit(arr, i)    //find least popular bit
@@ -47,6 +49,8 @@ function textToBinDigitArr (text: string): number[][] {
 }
 
 const data = Deno.readTextFileSync('3_test_data.txt')
+// const fs = require('fs')
+// const data = fs.readFileSync('3_test_data.txt', 'utf8')
 const dataArr = textToBinDigitArr(data)
 const oxygenRating = binArrToNum(getOxygenRating(dataArr))
 const co2Rating = binArrToNum(getCO2Rating(dataArr))
